@@ -1,0 +1,19 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.137.73:8761/eureka/
+  instance:
+    hostname: 192.168.137.73
+server:
+  port: 8762
+spring:
+  application:
+    name: eureka-client
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
