@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config-server
+  profiles:
+    active: dev
+  rabbitmq:
+    host: 192.168.137.41
+    port: 5672
+    username: admin
+    password: MECT888!
+server:
+  port: 8762
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.137.73:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: service-turbine
+server:
+  port: 8769
+turbine:
+  aggregator:
+    cluster-config: default
+  app-config: eureka-ribbon-client,eureka-feign-client
+  cluster-name-expression: new String("default")
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.137.73:8761/eureka/
+  instance:
+    hostname: 192.168.137.73
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

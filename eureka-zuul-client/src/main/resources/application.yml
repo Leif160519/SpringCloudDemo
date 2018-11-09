@@ -1,0 +1,62 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.137.73:8761/eureka/
+  instance:
+    hostname: 192.168.137.73
+server:
+  port: 8768
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    hiapi:
+      path: /hiapi/**
+      serviceId: eureka-client
+    ribbonapi:
+      path: /ribbonapi/**
+      serviceId: eureka-ribbon-client
+    feignapi:
+      path: /feignapi/**
+      serviceId: eureka-feign-client
+  prefix: /v1 #增加API接口版本号，访问的时候在端口号后面加/v1即可
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+#hiapi 为自己定义，需要制定它的path和serviceId，两者配合使用，就可以将制定类型的请求URL路由到指定的ServiceId。
+#同理，满足以/ribbonapi开头的请求URL都会被分配到eureka-ribbon-client，满足以/feignapi开头的请求URL都会被分配到eureka-feign-client服务
+#如果某个服务存在多个实例，Zuul结合Ribbon会做成负载均衡，将请求均分的部分路由到不同的服务实例
+
+
+#如果不需要Ribbon做负载均衡，可以指定服务实例URL，用zuul.routes.hiapi.url配置指定，这时就不需要配置zuul.routes.hiapi.serviceId了。一旦指定了
+#URL，Zuul就不能做负载均衡了，而是直接访问指定的URL，在实际开发中这种做法是不可取的，修改配置的代码如下：
+#zuul:
+#  routes:
+#    hiapi:
+#      path: /hiapi/**
+#      url: http://localhost:8762
+
+
+
+#若想指定URL，并且想做负载均衡，那么需要自己维护负载均衡的服务注册列表。
+#首先，将ribbon.eureka.enable改为false，即Ribbon负载均衡客户端不向Eureka Client获取服务注册列表信息。
+#然后，需要自己维护一份注册列表，该注册列表对应的服务名为hiapi-v1（名字可以自定义），通过配置hiapi-v1.ribbon.listOfServers来配置多个负载均衡的URL
+#代码如下
+#zuul:
+#  routes:
+#    hiapi:
+#      path: /hiapi/**
+#      serviceId: hiapi-v1
+#ribbon:
+#  eureka:
+#    enabled: false
+#hiapi-v1:
+#  ribbon:
+#    listOfServers: http://localhost:8762,http://localhost:8763

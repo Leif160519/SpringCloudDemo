@@ -1,0 +1,39 @@
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: classpath:/shared
+#  profiles:
+#    active: native
+#  application:
+#    name: config-server
+#server:
+#  port: 8769
+
+server:
+  port: 8769
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://192.168.81.248/nanjing-spring_cloud/springcloudconfig.git
+          search-paths: respo
+          username: root
+          password: MECT888!
+      label: master
+  application:
+    name: config-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.137.73:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

@@ -1,0 +1,51 @@
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: http://192.168.137.73:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+server:
+  port: 5000
+logging:
+  file: "logs/boot-admin-sample.log"
+spring:
+  security:
+    user:
+      name: admin
+      password: MECT888!
+  application:
+    name: server-admin
+  boot:
+    admin:
+      #邮件通知
+      notify:
+        mail:
+          to: yzluofei@126.com #接收通知的邮箱地址，逗号分隔
+          from: ${spring.mail.username} #邮件发送者,大部分情况与登录名相同
+          cc: te3030@163.com #需要抄送的邮箱地址，逗号分隔
+  #配置邮件服务器
+  mail:
+    host: smtp.qq.com #邮件服务器地址
+    username: 1552251389@qq.com #发送邮件的邮箱地址
+    password: rwemgjobcprnbadj #QQ邮箱授权码，需要打开pop/smtp服务，查看链接：https://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256
+    properties:
+      mail:
+        smtp: #添加邮件认证相关设置
+          auth: true
+          starttls:
+            enable: true
+            required: true
+

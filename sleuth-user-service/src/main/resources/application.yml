@@ -1,0 +1,22 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.137.73:8761/eureka/
+server:
+  port: 8762
+spring:
+  application:
+    name: user-service
+  zipkin:
+    base-url: http://192.168.137.73:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

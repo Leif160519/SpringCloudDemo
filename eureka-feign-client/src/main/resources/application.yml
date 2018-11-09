@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: eureka-feign-client
+server:
+  port: 8765
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.137.73:8761/eureka/
+  instance:
+    hostname: 192.168.137.73
+#开启hystrix功能
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

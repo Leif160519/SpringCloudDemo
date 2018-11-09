@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://192.168.137.73:8769
+      fail-fast: true
+  profiles:
+    active: dev

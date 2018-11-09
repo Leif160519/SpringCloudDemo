@@ -1,0 +1,21 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: 192.168.137.73
+  client:
+    register-with-eureka: true #开启自己作为客户端注册，这样在别的集群中也能看见自己
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+spring:
+  application:
+    name: eureka-server
