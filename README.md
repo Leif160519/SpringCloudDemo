@@ -9,7 +9,7 @@
 ![](/doc/images/actuator.png)
 ### 2.3 服务健康状态
 ![](/doc/images/health.png)
-### 2.3 熔断器主机面
+### 2.3 熔断器主界面
 ![](/doc/images/hystrix.png)
 ### 2.4 熔断器检测界面
 ![](/doc/images/hystrix.stream.png)
