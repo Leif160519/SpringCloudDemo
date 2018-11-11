@@ -37,6 +37,8 @@
 ![](/doc/images/jmx.png)
 ### 3.11 Threads
 ![](/doc/images/threads.png)
-### 3.12 服务上下线邮件通知
+### 3.12 Login
+![](/doc/images/logout.png)
+### 3.13 服务上下线邮件通知
 ![](/doc/images/email.png)
 
