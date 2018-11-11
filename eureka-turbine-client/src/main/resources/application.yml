@@ -1,6 +1,12 @@
 spring:
   application:
     name: service-turbine
+  profiles:
+    active: dev
+  boot:
+    admin:
+      client:
+        url: "http://192.168.137.73:5000"
 server:
   port: 8769
 turbine:
@@ -22,3 +28,5 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+logging:
+  file: "logs/${spring.application.name}.log"

@@ -3,8 +3,14 @@ eureka:
     service-url:
       defaultZone: http://192.168.137.73:8761/eureka/
 server:
-  port: 5000
+  port: 5001
 spring:
+  profiles:
+    active: dev
+  boot:
+    admin:
+      client:
+        url: "http://192.168.137.73:5000"
   application:
     name: gateway-service
   sleuth:
@@ -25,3 +31,5 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+logging:
+  file: "logs/${spring.application.name}.log"

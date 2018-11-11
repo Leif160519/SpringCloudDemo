@@ -7,6 +7,12 @@ eureka:
 server:
   port: 8762
 spring:
+  profiles:
+    active: dev
+  boot:
+    admin:
+      client:
+        url: "http://192.168.137.73:5000"
   application:
     name: eureka-client
 management:
@@ -17,3 +23,5 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+logging:
+  file: "logs/${spring.application.name}.log"

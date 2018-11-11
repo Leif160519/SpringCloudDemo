@@ -1,7 +1,12 @@
 spring:
+  profiles:
+    active: dev
   application:
     name: eureka-ribbon-client
-
+  boot:
+    admin:
+      client:
+        url: "http://192.168.137.73:5000"
 server:
   port: 8764
 
@@ -19,3 +24,5 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+logging:
+  file: "logs/${spring.application.name}.log"

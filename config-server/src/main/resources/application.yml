@@ -12,8 +12,14 @@
 #  port: 8769
 
 server:
-  port: 8769
+  port: 8767
 spring:
+  profiles:
+    active: dev
+  boot:
+    admin:
+      client:
+        url: "http://192.168.137.73:5000"
   cloud:
     config:
       server:
@@ -37,3 +43,5 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+logging:
+  file: logs/+${spring.application.name}.log

@@ -1,4 +1,10 @@
 spring:
+  profiles:
+    active: dev
+  boot:
+    admin:
+      client:
+        url: "http://192.168.137.73:5000"
   application:
     name: config-client
   cloud:
@@ -7,15 +13,13 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
-  profiles:
-    active: dev
   rabbitmq:
     host: 192.168.137.41
     port: 5672
     username: admin
     password: MECT888!
 server:
-  port: 8762
+  port: 8766
 eureka:
   client:
     service-url:
@@ -28,3 +32,5 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+logging:
+  file: "logs/${spring.application.name}.log"

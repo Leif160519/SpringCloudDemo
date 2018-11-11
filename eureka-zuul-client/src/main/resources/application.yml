@@ -7,6 +7,12 @@ eureka:
 server:
   port: 8768
 spring:
+  profiles:
+    active: dev
+  boot:
+    admin:
+      client:
+        url: "http://192.168.137.73:5000"
   application:
     name: service-zuul
 zuul:
@@ -29,6 +35,8 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+logging:
+  file: "logs/${spring.application.name}.log"
 
 #hiapi 为自己定义，需要制定它的path和serviceId，两者配合使用，就可以将制定类型的请求URL路由到指定的ServiceId。
 #同理，满足以/ribbonapi开头的请求URL都会被分配到eureka-ribbon-client，满足以/feignapi开头的请求URL都会被分配到eureka-feign-client服务

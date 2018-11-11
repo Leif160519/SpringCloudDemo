@@ -20,8 +20,10 @@ management:
 server:
   port: 5000
 logging:
-  file: "logs/boot-admin-sample.log"
+  file: "logs/${spring.application.name}.log"
 spring:
+  profiles:
+    active: dev
   security:
     user:
       name: admin
@@ -35,7 +37,7 @@ spring:
         mail:
           to: yzluofei@126.com #接收通知的邮箱地址，逗号分隔
           from: ${spring.mail.username} #邮件发送者,大部分情况与登录名相同
-          cc: te3030@163.com #需要抄送的邮箱地址，逗号分隔
+          cc: 1597265183@qq.com #需要抄送的邮箱地址，逗号分隔
   #配置邮件服务器
   mail:
     host: smtp.qq.com #邮件服务器地址
