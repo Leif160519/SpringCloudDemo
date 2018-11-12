@@ -27,7 +27,7 @@ spring:
   security:
     user:
       name: admin
-      password: MECT888!
+      password: 123456
   application:
     name: server-admin
   boot:

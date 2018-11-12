@@ -1,9 +1,9 @@
 eureka:
   instance:
-    hostname: 192.168.0.12
+    hostname: 192.168.137.73
   client:
     service-url:
-      defaultZone: http://192.168.0.12:8761/eureka/
+      defaultZone: http://192.168.137.73:8761/eureka/
 server:
   port: 8765
 
