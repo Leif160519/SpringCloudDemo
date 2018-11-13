@@ -1,6 +1,6 @@
 eureka:
   instance:
-    hostname: 192.168.137.73
+    ip-address: 192.168.137.73
   client:
     service-url:
       defaultZone: http://192.168.137.73:8761/eureka/

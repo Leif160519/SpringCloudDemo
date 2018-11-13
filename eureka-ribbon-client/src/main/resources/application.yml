@@ -15,7 +15,10 @@ eureka:
     service-url:
       defaultZone: http://192.168.137.73:8761/eureka/
   instance:
-    hostname: 192.168.137.73
+    hostname: ${eureka.instance.ip-address}
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+    prefer-ip-address: true
+    ip-address: 192.168.137.73
 management:
   endpoints:
     web:
