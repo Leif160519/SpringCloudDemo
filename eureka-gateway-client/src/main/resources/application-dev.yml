@@ -1,0 +1,14 @@
+eureka:
+  instance:
+    hostname: 192.168.137.73
+  client:
+    service-url:
+      defaultZone: http://192.168.137.73:8761/eureka/
+server:
+  port: 8080
+
+spring:
+  boot:
+    admin:
+      client:
+        url: "http://192.168.137.73:5000"

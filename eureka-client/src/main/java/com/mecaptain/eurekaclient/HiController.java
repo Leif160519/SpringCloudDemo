@@ -20,4 +20,14 @@ public class HiController {
     public String hiError(String name) {
         return "hi," + name + ",sorry,error!";
     }
+
+    @GetMapping(value = "/v1")
+    public String v1() {
+        return "v1";
+    }
+
+    @GetMapping(value = "/v2")
+    public String v2() {
+        return "v2";
+    }
 }
