@@ -1,4 +1,4 @@
-# 效果图
+# 效果图(请忽略浏览器中的URL地址)
 ## 1. 注册中心
 ![](/doc/images/eureka-server.png)
 
