@@ -33,7 +33,7 @@ spring:
       name: admin
       password: 123456
   application:
-    name: server-admin
+    name: spring-boot-admin
   boot:
     admin:
       #邮件通知
