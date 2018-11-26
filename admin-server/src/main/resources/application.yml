@@ -46,7 +46,7 @@ spring:
   mail:
     host: smtp.example.com #邮件服务器地址
     username: send@example.com #发送邮件的邮箱地址
-    password: Mailbox-authorization-code #邮箱授权码，需要打开pop/smtp服务，查看链接：https://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256
+    password: Mailbox-authorization-code #邮箱授权码，需要打开pop/smtp服务，具体操作步骤请自行搜索
     properties:
       mail:
         smtp: #添加邮件认证相关设置
