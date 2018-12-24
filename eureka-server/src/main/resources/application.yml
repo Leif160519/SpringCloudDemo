@@ -11,10 +11,10 @@ eureka:
     hostname: ${eureka.instance.ip-address}
     instance-id: ${eureka.instance.ip-address}:${server.port}
     prefer-ip-address: true
-    ip-address: 192.168.137.73
+    ip-address: 192.168.81.110
   client:
-#    register-with-eureka: true #开启自己作为客户端注册，这样在别的集群中也能看见自己
-#    fetch-registry: false
+    register-with-eureka: false #禁用自己作为客户端注册
+    fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 management:
@@ -31,7 +31,7 @@ spring:
   boot:
     admin:
       client:
-        url: "http://192.168.137.73:5000"
+        url: "http://192.168.81.110:5000"
   application:
     name: eureka-server
 logging:

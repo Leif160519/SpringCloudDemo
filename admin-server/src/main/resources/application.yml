@@ -5,14 +5,14 @@ eureka:
     # 服务清单的缓存更新时间，默认30秒一次
     registry-fetch-interval-seconds: 5
     service-url:
-      defaultZone: http://192.168.137.73:8761/eureka/
+      defaultZone: http://192.168.81.110:8761/eureka/
   instance:
     lease-renewal-interval-in-seconds: 5 # 心跳时间，即服务续约间隔时间（缺省为30s）
     lease-expiration-duration-in-seconds: 10  # 没有心跳的淘汰时间，10秒，即服务续约到期时间（缺省为90s）
     hostname: ${eureka.instance.ip-address}
     instance-id: ${eureka.instance.ip-address}:${server.port}
     prefer-ip-address: true
-    ip-address: 192.168.137.73
+    ip-address: 192.168.81.110
     health-check-url-path: /actuator/health
     metadata-map:
       user.name: ${spring.security.user.name}

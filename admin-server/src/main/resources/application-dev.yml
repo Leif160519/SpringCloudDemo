@@ -1,11 +1,11 @@
 eureka:
   instance:
-    ip-address: 192.168.137.73
+    ip-address: 192.168.81.110
     hostname: ${eureka.instance.ip-address}
     instance-id: ${eureka.instance.ip-address}:${server.port}
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://192.168.137.73:8761/eureka/
+      defaultZone: http://192.168.81.110:8761/eureka/
 server:
   port: 5000

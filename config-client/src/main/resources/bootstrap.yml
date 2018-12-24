@@ -3,7 +3,7 @@ spring:
     name: config-client
   cloud:
     config:
-      uri: http://192.168.137.73:8769
+      uri: http://192.168.81.110:8769
       fail-fast: true
   profiles:
     active: dev
