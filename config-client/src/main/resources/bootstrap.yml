@@ -3,7 +3,8 @@ spring:
     name: config-client
   cloud:
     config:
-      uri: http://192.168.81.110:8769
-      fail-fast: true
-  profiles:
-    active: dev
+#        service-id: config-server #需要注册中心的支持
+      uri: http://192.168.81.110:8767 #不需要注册中心支持
+      name: application #代表文件前缀
+      label: master #分支
+      profile: test #如果是其他yml，写全名即可，这里的test代表application-test.yml(也代表test.yml)

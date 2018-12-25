@@ -5,21 +5,6 @@ spring:
     admin:
       client:
         url: "http://192.168.81.110:5000"
-  application:
-    name: config-client
-  cloud:
-    config:
-      fail-fast: true
-      discovery:
-        enabled: true
-#        service-id: config-server #需要注册中心的支持
-      uri: http://192.168.81.110:8767 #不需要注册中心支持
-      name: 13 #如果是其他yml，写全名即可，这里的13代表application-13.yml(也代表13.yml)
-  rabbitmq:
-    host: 192.168.81.31
-    port: 5672
-    username: admin
-    password: MECT888!
 server:
   port: 8766
 eureka:

@@ -38,24 +38,24 @@ spring:
       password: 123456
   application:
     name: spring-boot-admin
-  boot:
-    admin:
-      #邮件通知
-      notify:
-        mail:
-          to: receive@example.com #接收通知的邮箱地址，逗号分隔
-          from: ${spring.mail.username} #邮件发送者,大部分情况与登录名相同
-          cc: cc@example.com #需要抄送的邮箱地址，逗号分隔，如果不需要抄送，此项可不写
-  #配置邮件服务器
-  mail:
-    host: smtp.example.com #邮件服务器地址
-    username: send@example.com #发送邮件的邮箱地址
-    password: Mailbox-authorization-code #邮箱授权码，需要打开pop/smtp服务，具体操作步骤请自行搜索
-    properties:
-      mail:
-        smtp: #添加邮件认证相关设置
-          auth: true
-          starttls:
-            enable: true
-            required: true
+#  boot:
+#    admin:
+#      #邮件通知
+#      notify:
+#        mail:
+#          to: receive@example.com #接收通知的邮箱地址，逗号分隔
+#          from: ${spring.mail.username} #邮件发送者,大部分情况与登录名相同
+#          cc: cc@example.com #需要抄送的邮箱地址，逗号分隔，如果不需要抄送，此项可不写
+#  #配置邮件服务器
+#  mail:
+#    host: smtp.example.com #邮件服务器地址
+#    username: send@example.com #发送邮件的邮箱地址
+#    password: Mailbox-authorization-code #邮箱授权码，需要打开pop/smtp服务，具体操作步骤请自行搜索
+#    properties:
+#      mail:
+#        smtp: #添加邮件认证相关设置
+#          auth: true
+#          starttls:
+#            enable: true
+#            required: true
 

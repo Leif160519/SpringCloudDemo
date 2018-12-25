@@ -24,11 +24,14 @@ spring:
     config:
       server:
         git:
-          uri: http://192.168.3.233/nanjing-spring_cloud/springcloudconfig.git
-          search-paths: respo
-          username: root
-          password: MECT888!
-      label: master
+          uri: http://192.168.3.233/nanjing-springcloud/applicationconfig.git #仓库地址
+          search-paths: dev #仓库下的子目录
+          username: root #gitlab用户名
+          password: MECT888! #gitlab密码
+  #通过/{application}/{profile}就能访问配置文件
+  #application表示配置文件的名字，对应我们上面的配置文件就是application(配置文件统一前缀)
+  #profile表示环境(配置文件后面的文件名)
+  #举例：启动配置中心后通过访问：http://192.168.81.110:8767/application/test/即可访问配置文件内容
   application:
     name: config-server
 eureka:
