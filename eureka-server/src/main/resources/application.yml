@@ -13,8 +13,8 @@ eureka:
     prefer-ip-address: true
     ip-address: 192.168.81.110
   client:
-#    register-with-eureka: false #禁用自己作为客户端注册，禁用的话spring boot admin就看不到eureka-server的服务了，也就无法检测状态了
-#    fetch-registry: false
+    register-with-eureka: true #启用自己作为客户端注册，禁用的话spring boot admin就看不到eureka-server的服务了，也就无法检测状态了
+    fetch-registry: false #是否需要去检索寻找服务,因为是注册中心，他的任务是维护服务实例，所以不需要去寻找服务，默认是true
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 management:
